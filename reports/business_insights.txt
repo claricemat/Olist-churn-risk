@@ -1,0 +1,26 @@
+
+BUSINESS INSIGHTS - OLIST CHURN RISK MODEL
+===========================================
+
+1. VENDOR DISPATCH TIME (days_to_carrier) - MOST CRITICAL
+   Vendors that take longer to ship products are the #1 driver of churn risk.
+   Recommendation: Implement SLA alerts for vendors exceeding 2 days to dispatch.
+
+2. SEASONALITY (purchase_month)
+   Orders placed in Q4 (Oct-Dec) have significantly higher churn risk due to
+   logistics overload during Black Friday and Christmas periods.
+   Recommendation: Increase logistics capacity and set conservative delivery
+   estimates during peak months.
+
+3. ORDER SIZE (n_items)
+   Multi-item orders carry higher churn risk, likely due to higher chance of
+   partial delivery issues.
+   Recommendation: Prioritize quality checks for orders with 3+ items.
+
+4. FREIGHT COST (total_freight + freight_ratio)
+   High freight costs increase churn risk by raising customer expectations.
+   Recommendation: Review freight pricing strategy for long-distance deliveries.
+
+5. INTERSTATE DELIVERIES (interstate)
+   Cross-state deliveries show higher churn risk than local ones.
+   Recommendation: Partner with regional carriers to improve last-mile delivery.
